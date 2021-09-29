@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar backgroundColor="primary">
+  <a mat-tab-link routerLinkActive="active" routerLink="/add">Add</a>
+  <a mat-tab-link routerLinkActive="active" routerLink="/list">List</a>
+  <span class="fill-space"></span>
+  <a *ngIf="!auth.loggedIn" mat-tab-link routerLinkActive="active" routerLink="/login">Login</a>
+  <a *ngIf="auth.loggedIn" (click)="auth.logout()" mat-tab-link routerLinkActive="active" routerLink="/login">Logout</a>
+</nav>
+<router-outlet></router-outlet>
